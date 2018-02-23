@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+
+    <title>消防知识竞答</title>
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.fn.fullpage({
+                slidesColor: ['#0075D1', '#C2E5FF', '#FDF6E1', '#E9E9E9', '#F3F3F3', '#F9F3DC'],
+                anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+                menu: '#menu',
+                afterRender: function(){
+                    $('.screen-main span').each(function(){
+                        var $rel = $(this).attr('rel');
+                        var $arr = $rel.split(',');
+                        $(this).animate({
+                            left: $arr[2] + '%',
+                            top: $arr[3] + '%'
+                        }, 500);
+                    });
+                    $('.inner a').each(function(){
+                        var $rel = $(this).attr('rel');
+                        var $arr = $rel.split(',');
+                        $(this).animate({
+                            left: $arr[0] + '%',
+                            top: $arr[1] + '%'
+                        }, 500);
+                    });
+                },
+                afterLoad: function(anchorLink, index){
+                    if(index == 1){
+                        $('.screen-main span').each(function(){
+                            var $rel = $(this).attr('rel');
+                            var $arr = $rel.split(',');
+                            $(this).animate({
+                                left: $arr[2] + '%',
+                                top: $arr[3] + '%'
+                            }, 500);
+                        });
+                    }
+                    if(index == 2 || index == 3 || index == 4 || index == 5){
+                        $('.inner').eq(index - 2).find('a').each(function(){
+                            var $rel = $(this).attr('rel');
+                            var $arr = $rel.split(',');
+                            $(this).animate({
+                                left: $arr[2] + '%',
+                                top: $arr[3] + '%'
+                            }, 500);
+                        });
+                    }
+                    if(index == 6){
+                        $('.zanzhu-con a').fadeIn(1000);
+                    }
+                },
+                onLeave: function(index, direction){
+                    if(index == 1){
+                        $('.screen-main span').each(function(){
+                            var $rel = $(this).attr('rel');
+                            var $arr = $rel.split(',');
+                            $(this).animate({
+                                left: $arr[0] + '%',
+                                top: $arr[1] + '%'
+                            }, 500);
+                        });
+                    }
+                    if(index == 2 || index == 3 || index == 4 || index == 5){
+                        $('.inner').eq(index - 2).find('a').each(function(){
+                            var $rel = $(this).attr('rel');
+                            var $arr = $rel.split(',');
+                            $(this).animate({
+                                left: $arr[0] + '%',
+                                top: $arr[1] + '%'
+                            }, 500);
+                        });
+                    }
+                    if(index == 6){
+                        $('.zanzhu-con a').fadeOut(1000);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container" id="fullpage">
+    <div class="section">
+        <div class="screen-main">
+            <div class="page gxjd-cj3">
+                <div class="cj-page1">
+                    <a class="reTry" href="javascript:void(0)">再试一次</a>
+                    <a class="cjjg3" href="javascript:void(0)">结束答题</a>
+                    <a class="cjjg4" href="javascript:void(0)">查看全部名单</a>
+                    <a class="xsList2" href="javaScript:;">
+                        <table>
+                            <tr>
+                                <td class="headerImg"><img src="img/header.png" alt=""/><p>会跑的鱼鱼鱼</p></td>
+                                <td class="hm">188***6677</td>
+                                <td class="hf">50元话费</td>
+                            </tr>
+                            <tr>
+                                <td class="headerImg"><img src="img/header.png" alt=""/><p>会跑的鱼鱼鱼</p></td>
+                                <td class="hm">188***6677</td>
+                                <td class="hf">50元话费</td>
+                            </tr>
+                            <tr>
+                                <td class="headerImg"><img src="img/header.png" alt=""/><p>会跑的鱼鱼鱼</p></td>
+                                <td class="hm">188***6677</td>
+                                <td class="hf">50元话费</td>
+                            </tr>
+                            <tr>
+                                <td class="headerImg"><img src="img/header.png" alt=""/><p>会跑的鱼鱼鱼</p></td>
+                                <td class="hm">188***6677</td>
+                                <td class="hf">50元话费</td>
+                            </tr>
+                        </table>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

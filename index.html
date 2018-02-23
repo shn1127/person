@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+
+	<title>消防知识竞答</title>
+	<link rel="stylesheet" href="css/jquery.fullpage.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.fullpage.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$.fn.fullpage({
+//		slidesColor: ['#0075D1', '#C2E5FF', '#FDF6E1'],
+				anchors: ['page1', 'page2', 'page3','page4','page5','page6','page7','page8','page9','page10','page11','page12','page13','page14','page15','page16','page17','page18','page19','page20'],
+				menu: '.menu',
+				afterRender: function(){
+					$('.screen-main span').each(function(){
+						var $rel = $(this).attr('rel');
+						var $arr = $rel.split(',');
+						$(this).animate({
+							left: $arr[2] + '%',
+							top: $arr[3] + '%'
+						}, 500);
+					});
+					$('.inner .action').each(function(){
+						var $rel = $(this).attr('rel');
+						if($rel){
+							var $arr = $rel.split(',');
+							$(this).animate({
+								left: $arr[0] + '%',
+								top: $arr[1] + '%'
+							}, 500);}
+					});
+				},
+				afterLoad: function(anchorLink, index){
+					if(index == 1){
+						$('.screen-main span').each(function(){
+							var $rel = $(this).attr('rel');
+							var $arr = $rel.split(',');
+							$(this).animate({
+								left: $arr[2] + 'px',
+								top: $arr[3] + 'px'
+							}, 500);
+						});
+					}
+					if(index == 2 || index == 3 || index == 4 || index == 5 || index == 6){
+						$('.inner').eq(index - 2).find('.action').each(function(){
+							var $rel = $(this).attr('rel');
+							if($rel){
+								var $arr = $rel.split(',');
+								$(this).animate({
+									left: $arr[2] + '%',
+									top: $arr[3] + '%'
+								}, 500);}
+						});
+					}
+					if(index == 7){
+						$('.zanzhu-con a').fadeIn(1000);
+					}
+				},
+				onLeave: function(index, direction){
+					if(index == 1){
+						$('.screen-main span').each(function(){
+							var $rel = $(this).attr('rel');
+							var $arr = $rel.split(',');
+							$(this).animate({
+								left: $arr[0] + '%',
+								top: $arr[1] + '%'
+							}, 500);
+						});
+					}
+					if(index == 2 || index == 3 || index == 4 || index == 5 || index == 6){
+						$('.inner').eq(index - 2).find('.action').each(function(){
+							var $rel = $(this).attr('rel');
+							if($rel){
+								var $arr = $rel.split(',');
+								$(this).animate({
+									left: $arr[0] + '%',
+									top: $arr[1] + '%'
+								}, 500);}
+						});
+					}
+					if(index == 7){
+						$('.zanzhu-con a').fadeOut(1000);
+					}
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+<div class="container" id="fullpage">
+	<div class="section  page page1">
+		<div class="screen-main">
+			<a class="startAnswer"  href="#page2"><p>我不知道你是谁开始答题</p></a>
+		</div>
+	</div>
+	<div class="section">
+		<div class="science-inner inner">
+			<div class="page page2">
+				<div class="main_q">
+					<a class="stimg1 action" href="javascript:void(0)" rel="0,-10,0,6" ><h3  >共<span>5</span>题&nbsp;已答对<span>0</span>题</h3></a>
+					<a href="javascript:void(0)" class="jd action" rel="-100,-10,50,14"></a>
+					<a class=" stimg2 action" href="javascript:void(0)" rel="130,2,0,23">
+						<div class="mask">
+							<h4>单选题（每题只有一个正确答案）</h4>
+							<p>1.单位的__C是本单位的消防安全责任人。</p>
+							<ul>
+								<li><label><input type="radio" name="select"><span>消防安全责任人</span></label></li>
+								<li><label><input type="radio" name="select"><span>消防安全责任人消防安全责任人</span></label></li>
+								<li><label><input type="radio" name="select"><span>法定代表人</span></label></li>
+								<li><label><input type="radio" name="select"><span>消防专职队的主管人</span></label></li>
+							</ul>
+						</div>
+						<p style="text-align: center;margin-top:30px;"><span class="next_q2 stimg3 action"  href="#page3">下一题</span></p>
+					</a>
+					<a class="stimg4 action"  href="javascript:void(0)" rel="761,850,0,70">点击你认为正确的选项</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="science-inner inner">
+			<div class="page page2">
+				<div class="main_q">
+					<a class="stimg1 action" href="javascript:void(0)" rel="0,-10,0,6" ><h3  >共<span>5</span>题&nbsp;已答对<span>0</span>题</h3></a>
+					<a href="javascript:void(0)" class="jd" rel="-100,-10,50,14"></a>
+					<a class=" stimg2 action" href="javascript:void(0)" rel="130,2,0,23">
+						<div class="mask">
+							<h4>单选题（每题只有一个正确答案）</h4>
+							<p>3.单位的__C是本单位的消防安全责任人。</p>
+							<ul>
+								<li><label><input type="checkbox" name="select"><span>消防安全责任人</span></label></li>
+								<li><label><input type="checkbox" name="select"><span>消防安全责任人消防安全责任人</span></label></li>
+								<li><label><input type="checkbox" name="select"><span>法定代表人</span></label></li>
+								<li><label><input type="checkbox" name="select"><span>消防专职队的主管人</span></label></li>
+							</ul>
+						</div>
+					</a>
+					<a class="stimg4 action"  href="javascript:void(0)" rel="761,850,0,70">点击你认为正确的选项</a>
+					<a class="next_q stimg3 action"  href="#page4" rel="-150,-10,50,78">下一题</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="science-inner inner">
+			<div class="page page3">
+				<a class="grade soimg1 action" href="javascript:void(0)" rel="156,-175,50,27">90 <i>分</i></a>
+				<a class="reanwser soimg2 action" href="#page1" rel="405,-186,50,40">再试一次</a>
+				<a class="share soimg4 action" href="javascript:void(0)" rel="-10,200,50,52">分享答题</a>
+				<a class="allNameList action" href="javaScript:;" rel="-100,300,64,62">查看全部名单</a>
+				<a class="nameList action" href="javaScript:;" rel="300,400,50,70">
+					<table>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+					</table>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="science-inner inner">
+			<div class="page wareName">
+				<a class="wareList action" href="javascript:void(0)" rel="-50,-14,50,14"></a>
+				<a class="nameList action"href="javaScript:;"  rel="500,19,50,19">
+					<table>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+						<tr>
+							<td class="header"><img src="img/header.png" alt=""/><span>会跑的鱼鱼鱼</span></td>
+							<td class="phoneNumber">188***6677</td>
+							<td class="ware">50元话费</td>
+						</tr>
+					</table>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$('.next_q2').click(function(){
+		var url=$(this).attr('href');
+		location.href="index.html"+url;
+	})
+</script>
+</body>
+</html>
